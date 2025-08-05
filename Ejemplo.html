@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Web Sencilla</title>
+  <link rel="stylesheet" href="Ejemplo css.css">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      transition: all 0.3s ease;
+      padding: 1rem;
+    }
+
+    body.dark {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+    }
+
+    button {
+      margin: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-color);
+    }
+
+    footer {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="toggleMode()">🌗 Cambiar modo</button>
+  <button onclick="document.getElementById('bg-music').play()">▶️ Música</button>
+  <button onclick="document.getElementById('bg-music').pause()">⏸️ Pausar</button>
+
+  <audio id="bg-music" loop>
+    <source src="https://music.youtube.com/watch?v=xMPVYT8Q9PE&list=RDAMVMxMPVYT8Q9PE" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <header>
+    <h1>Bienvenido a mi Página</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre mí</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Acerca de este sitio</h2>
+      <p>Este es un ejemplo de una página web sencilla con HTML y CSS. Puedes personalizar el contenido según tus necesidades.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Edward Fénix. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
